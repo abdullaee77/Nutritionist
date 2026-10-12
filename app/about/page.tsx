@@ -22,7 +22,7 @@ export default function About() {
           <Reveal>
             <div className="portrait">
               <LogoMark size={140} n="#F7F1E6" />
-              <small>Photo of {site.owner} goes here</small>
+              
             </div>
           </Reveal>
           <Reveal delay={120}>
