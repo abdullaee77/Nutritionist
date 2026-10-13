@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import Hero from "../components/Hero";
-import Counter from "../components/Counter";
 import Testimonial from "../components/Testimonial";
+import { LogoMark } from "../components/Logo";
 import { WhatsAppIcon } from "../components/Icons";
 import { site, waLink } from "../lib/site";
 
@@ -32,37 +32,32 @@ export default function Home() {
         </div>
       </div>
 
-    <section className="stats">
-  <div className="container stats-grid">
-    <Reveal>
-      <div className="stat"><b>1:1</b><span>Personalised care</span></div>
-    </Reveal>
-    <Reveal delay={120}>
-      <div className="stat"><b><Counter to={3} /></b><span>Step method</span></div>
-    </Reveal>
-    <Reveal delay={240}>
-      <div className="stat"><b><Counter to={6} /></b><span>Week signature program</span></div>
-    </Reveal>
-  </div>
-</section>
+      <section className="section story-sec">
+        <div className="container">
+          <Reveal className="zoom">
+            <div className="story-card">
+              <span className="sc-quote" aria-hidden="true">“</span>
+              <span className="sc-eyebrow">Our Story</span>
 
-      <section className="section">
-        <div className="container split">
-          <Reveal>
-            <span className="eyebrow">The Gap</span>
-            <h2>Nourishment without direction isn't nourishment.</h2>
-          </Reveal>
-          <Reveal delay={120}>
-            <p>
-              Most nutrition advice feeds the body and ignores everything else. People follow every rule on a
-              meal plan and still feel lost, because no one ever connected what they eat to why they're here.
-            </p>
-            <p>
-              Naflar exists to close that gap: evidence-based clinical nutrition, joined with Sunnah-inspired
-              principles of moderation and routine, so that eating well becomes a path back to purpose, not
-              just a number on a scale.
-            </p>
-            <Link className="link" href="/about">Meet {site.owner} →</Link>
+              <p className="sc-text">
+                True health is more than just what’s on your plate—it’s{" "}
+                <span className="hl">the harmony of mind, body, and soul.</span> After immersing myself in
+                human nutrition and dietetics, I’ve witnessed people nourish their bodies yet neglect their
+                sense of purpose. That’s why I founded Naflar Health Care: to connect clinical science with
+                the fulfillment of a <span className="hl">purpose-driven life.</span>
+              </p>
+
+              <div className="sc-foot">
+                <div className="sc-who">
+                  <span className="sc-avatar"><LogoMark size={40} n="#F7F1E6" /></span>
+                  <div>
+                    <b>{site.owner}</b>
+                    <small>Founder</small>
+                  </div>
+                </div>
+                <Link className="btn btn-honey" href="/about">Meet {site.owner} →</Link>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

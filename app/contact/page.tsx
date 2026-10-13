@@ -47,7 +47,7 @@ export default function Contact() {
               <a className="card contact-card" href={site.instagram} target="_blank" rel="noreferrer">
                 <small className="tag">Follow</small>
                 <h3><InstagramIcon size={22} /> Instagram</h3>
-                <p>Daily tips on Feed · Balance · Fulfill.</p>
+        <p>Tips and updates from Naflar Health Care.</p>
               </a>
             </div>
           </Reveal>

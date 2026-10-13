@@ -68,13 +68,7 @@ export default function Hero() {
     <section className="hero" ref={ref} onMouseMove={onMove}>
       <div className="blob b1" /><div className="blob b2" />
 
-      <div className="bg-marquee" aria-hidden="true">
-        <div>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <span key={i}>FEED · BALANCE · FULFILL · </span>
-          ))}
-        </div>
-      </div>
+ 
 
       {leaves.map((l, i) => (
         <span

@@ -1,8 +1,22 @@
 import Reveal from "../../components/Reveal";
 import { LogoMark } from "../../components/Logo";
+import { WhatsAppIcon } from "../../components/Icons";
 import { site, waLink } from "../../lib/site";
 
 export const metadata = { title: "About — Naflar Health Care" };
+
+const approach = [
+  { t: "Feed", tag: "Physical", c: "pom", d: "Assess labs, symptoms and eating patterns. Feed the body what it clinically needs, not a generic template." },
+  { t: "Balance", tag: "Mental & lifestyle", c: "sage", d: "Simple, repeatable rhythms around eating, sleep and moderation, inspired by the Sunnah." },
+  { t: "Fulfill", tag: "Spiritual", c: "honey", d: "Reflective work connecting nourishment to your bigger purpose: why caring for your body matters to what you're here to do." },
+];
+
+const areas = [
+  "Clinical Nutrition Counseling",
+  "Sunnah-Inspired Lifestyle Coaching",
+  "Purposeful Meal Planning",
+  "Mindful Eating Workshops",
+];
 
 export default function About() {
   return (
@@ -10,7 +24,7 @@ export default function About() {
       <section className="page-head">
         <div className="container">
           <span className="eyebrow rise">About</span>
-          <h1 className="rise" style={{ animationDelay: "100ms" }}>A leaf that becomes a person.</h1>
+          <h1 className="rise" style={{ animationDelay: "100ms" }}>Where clinical science meets purpose.</h1>
           <p className="lead rise" style={{ animationDelay: "200ms" }}>
             {site.owner} · {site.role}
           </p>
@@ -18,15 +32,24 @@ export default function About() {
       </section>
 
       <section className="section">
-        <div className="container split">
+        <div className="container about-grid">
           <Reveal>
-            <div className="portrait">
-              <LogoMark size={140} n="#F7F1E6" />
-              
-            </div>
+            <aside className="profile-card">
+              <span className="pc-mark"><LogoMark size={64} n="#F7F1E6" /></span>
+              <h3>{site.owner}</h3>
+              <p>{site.role}</p>
+              <div className="pills">
+                <span>Grounded</span><span>Gentle</span><span>Evidence-led</span>
+              </div>
+              <a className="btn btn-honey" href={waLink()} target="_blank" rel="noreferrer">
+                <WhatsAppIcon size={18} /> Book on WhatsApp
+              </a>
+            </aside>
           </Reveal>
+
           <Reveal delay={120}>
-            <h2>Hi, I'm {site.owner.split(" ")[0]}.</h2>
+            <span className="eyebrow">My story</span>
+            <h2>Hi, I'm Rimsha.</h2>
             <p>
               I'm a clinical dietitian and nutrition coach. I built Naflar because I kept seeing the same
               pattern: people who followed every rule on a meal plan and still felt lost.
@@ -35,9 +58,6 @@ export default function About() {
               My work joins evidence-based clinical nutrition with the moderation and routine of the Sunnah,
               so that eating well becomes a path back to purpose, not just a number on a scale.
             </p>
-            <div className="pills">
-              <span>Grounded</span><span>Gentle</span><span>Evidence-led</span>
-            </div>
           </Reveal>
         </div>
       </section>
@@ -45,20 +65,18 @@ export default function About() {
       <section className="section tint">
         <div className="container">
           <Reveal className="center">
-            <span className="eyebrow">The Logo</span>
-            <h2>What the mark means</h2>
+            <span className="eyebrow">How I work</span>
+            <h2>Feed. Balance. Fulfill.</h2>
+            <p className="sub">One step for the body, one for daily life, one for purpose.</p>
           </Reveal>
           <div className="grid-3">
-            {[
-              ["The N", "Naflar, a steady path.", "Balance"],
-              ["The sage leaf", "Nourishment and growth.", "Feed"],
-              ["The honey dot", "A person looking up toward purpose.", "Fulfill"],
-            ].map(([t, d, k], i) => (
-              <Reveal key={t} delay={i * 110}>
-                <div className="card">
-                  <small className="tag">{k}</small>
-                  <h3>{t}</h3>
-                  <p>{d}</p>
+            {approach.map((s, i) => (
+              <Reveal key={s.t} delay={i * 120}>
+                <div className={`step ${s.c}`}>
+                  <span className="step-num">0{i + 1}</span>
+                  <small>{s.tag}</small>
+                  <h3>{s.t}</h3>
+                  <p>{s.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -66,11 +84,28 @@ export default function About() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container">
+          <Reveal className="center">
+            <span className="eyebrow">Areas of Focus</span>
+            <h2>Where clinical meets purposeful.</h2>
+          </Reveal>
+          <div className="pills center-pills">
+            {areas.map((a) => (
+              <span key={a}>{a}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section cta-wrap">
-        <Reveal>
+        <Reveal className="zoom">
           <div className="container cta">
             <h2>Let's find your next clear step.</h2>
-            <a className="btn btn-honey" href={waLink()} target="_blank" rel="noreferrer">Book a consultation</a>
+            <p>Message us on WhatsApp for programs and availability.</p>
+            <a className="btn btn-honey" href={waLink()} target="_blank" rel="noreferrer">
+              <WhatsAppIcon size={20} /> {site.phoneDisplay}
+            </a>
           </div>
         </Reveal>
       </section>
