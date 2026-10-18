@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 
 const EXPORT_TYPES = [
@@ -20,15 +19,14 @@ const EXPORT_TYPES = [
   { id: "outcome-report", label: "Outcome Report" },
 ];
 
-export default function ExportClient() {
-  const { id } = useParams();
+export default function ExportClient({ clientId }: { clientId: string }) {
   const [selectedExport, setSelectedExport] = useState("full");
   const [loading, setLoading] = useState(false);
 
   async function handleExport() {
     setLoading(true);
     
-    const res = await fetch(`/api/owner/clients/${id}/export?type=${selectedExport}`);
+    const res = await fetch(`/api/owner/clients/${clientId}/export?type=${selectedExport}`);
     const blob = await res.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -41,8 +39,7 @@ export default function ExportClient() {
 
   return (
     <div style={{ maxWidth: 500, margin: "40px auto" }}>
-      {/* ADDED BACK BUTTON */}
-      <Link href={`/owner/clients/${id}`} className="btn btn-ghost" style={{ padding: "8px 16px", marginBottom: 20, display: "inline-flex", alignItems: "center", gap: 8 }}>
+      <Link href={`/owner/clients/${clientId}`} className="btn btn-ghost" style={{ padding: "8px 16px", marginBottom: 20, display: "inline-flex", alignItems: "center", gap: 8 }}>
         ← Back to Client
       </Link>
 

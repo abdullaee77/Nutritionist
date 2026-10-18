@@ -1,12 +1,13 @@
-import { Suspense } from "react";
 import ExportClient from "./ExportClient";
+import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 export const instant = false;
 
-export default function ExportPage() {
-  return (
-    <Suspense fallback={<div style={{ padding: 40, textAlign: "center" }}>Loading export tools...</div>}>
-      <ExportClient />
-    </Suspense>
-  );
+export default async function ExportPage({ params }: { params: Promise<{ id: string }> }) {
+  const session = await auth();
+  if (!session) redirect("/owner/login");
+
+  const { id } = await params;
+  return <ExportClient clientId={id} />;
 }
