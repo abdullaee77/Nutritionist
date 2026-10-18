@@ -404,7 +404,7 @@ export default function ResourcePDF({ resource }: any) {
             ))}
           </View>
 
-          <View style={{ break: "page" }} />
+          <View break />
           <View style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
             <HeaderBar title="GUIDES" />
             <Text style={styles.pillHeader}>GROCERY CHECKLIST</Text>
