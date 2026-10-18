@@ -732,3 +732,29 @@ html.ready .word .em::after { animation-play-state: running; }
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
   .profile-card { position: static; }
 }
+/* ================= owner panel (Phase 1) ================= */
+.ow-shell { background: var(--cream); min-height: 100vh; }
+.ow-card {
+  background: #fff; border-radius: var(--radius); padding: 24px;
+  box-shadow: 0 6px 24px rgba(42,58,48,.06);
+}
+.ow-flag-red {
+  background: #ffe8e8; color: #8f3a4c; border-left: 4px solid var(--pom);
+  padding: 10px 14px; border-radius: 12px; font-size: .92rem;
+}
+.ow-flag-ok {
+  background: #eef5ec; color: #5f7d5a; border-left: 4px solid var(--sage);
+  padding: 10px 14px; border-radius: 12px; font-size: .92rem;
+}
+/* Owner Dashboard Hover Effects */
+.hover-row:hover {
+  background-color: var(--cream) !important;
+}
+/* Hide scrollbar for sidebar */
+aside::-webkit-scrollbar {
+  display: none;
+}
+aside {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

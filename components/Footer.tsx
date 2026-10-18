@@ -38,6 +38,9 @@ export default function Footer() {
       </div>
       <div className="container footer-bottom">
         © <Year /> {site.name}. All rights reserved.
+          <span style={{ float: "right", opacity: .55, fontSize: ".8rem" }}>
+           <a href="/owner/login">Owner</a>
+         </span>
       </div>
     </footer>
   );

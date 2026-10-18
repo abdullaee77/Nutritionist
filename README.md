@@ -57,3 +57,49 @@ nutritionist
 └─ tsconfig.json
 
 ```
+```
+nutritionist
+├─ AGENTS.md
+├─ app
+│  ├─ about
+│  │  └─ page.tsx
+│  ├─ contact
+│  │  └─ page.tsx
+│  ├─ favicon.ico
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ method
+│  │  └─ page.tsx
+│  ├─ page.tsx
+│  └─ programs
+│     └─ page.tsx
+├─ components
+│  ├─ ContactForm.tsx
+│  ├─ Counter.tsx
+│  ├─ Foods.tsx
+│  ├─ Footer.tsx
+│  ├─ Hero.tsx
+│  ├─ Icons.tsx
+│  ├─ Logo.tsx
+│  ├─ Navbar.tsx
+│  ├─ Preloader.tsx
+│  ├─ Reveal.tsx
+│  ├─ Testimonial.tsx
+│  ├─ WhatsAppFloat.tsx
+│  └─ Year.tsx
+├─ eslint.config.mjs
+├─ lib
+│  └─ site.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ README.md
+└─ tsconfig.json
+
+```

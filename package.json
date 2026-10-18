@@ -6,21 +6,43 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:seed": "tsx --env-file=.env.local scripts/seed.ts",
+    "db:seed-resources": "tsx --env-file=.env.local scripts/seed-resources.ts",
+    "seed-edu": "tsx --env-file=.env.local scripts/seed-edu.ts",
+    "seed-clinical": "tsx --env-file=.env.local scripts/seed-clinical.ts",
+    "test": "vitest run"
   },
   "dependencies": {
+    "@auth/drizzle-adapter": "^1.8.0",
+    "@neondatabase/serverless": "^0.10.4",
+    "@react-pdf/renderer": "^4.9.0",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "dotenv": "^18.0.8",
+    "drizzle-orm": "^0.38.4",
+    "html-to-image": "^1.11.13",
+    "nanoid": "^5.0.9",
     "next": "16.4.0",
+    "next-auth": "^5.0.0-beta.25",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.30.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.19.2",
+    "typescript": "^5",
+    "vitest": "^3.0.5"
   }
 }

@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Figtree, Quicksand } from "next/font/google";
+import { Suspense } from "react"; // <-- ADD THIS IMPORT
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Preloader from "../components/Preloader";
-import WhatsAppFloat from "../components/WhatsAppFloat";
+import AuthProvider from "../components/AuthProvider";
+import PublicWrapper from "../components/PublicWrapper";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -36,11 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${display.variable} ${body.variable} ${head.variable}`}
     >
       <body suppressHydrationWarning>
-        <Preloader />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <AuthProvider>
+          {/* 2. WRAP PUBLICWRAPPER IN SUSPENSE */}
+          <Suspense fallback={<div>{children}</div>}>
+            <PublicWrapper>{children}</PublicWrapper>
+          </Suspense>
+        </AuthProvider>
       </body>
     </html>
   );
